@@ -15,7 +15,7 @@ const InputContainer = styled.div`
     border: none;
     padding: 11px 70px 8px 0;
     border-bottom: 1px solid #9e9e9e;
-    font-size: 15px;
+    font-size: ${({ theme }) => theme.fontSize.size15};
     cursor: pointer;
   }
   > input:focus {
@@ -28,6 +28,7 @@ interface Props {
   placeHloder: string;
   type: string;
   onChangeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
 }
 
 const LoginInput = (props: Props) => {
@@ -37,6 +38,7 @@ const LoginInput = (props: Props) => {
         placeholder={props.placeHloder}
         type={props.type}
         onChange={props.onChangeHandler}
+        value={props.value}
       />
     </InputContainer>
   );

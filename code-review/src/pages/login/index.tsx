@@ -3,33 +3,18 @@ import styled from 'styled-components';
 import { flexCenter } from '../../../styles/css-style';
 import SubmitButton from '../../components/Button/SubmitButton';
 import LoginInput from '../../components/Input/LoginInput';
+import useInput from '../../hook/useInput';
 
 const Login = () => {
-  const [eamil, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(eamil, password);
-    // 로그인 성공하면
-    setEmail('');
-    setPassword('');
+
+    console.log(email.value);
+    console.log(password.value);
   };
 
-  const onChangeEmail = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      const userEamil = event.target.value;
-      setEmail(userEamil);
-    },
-    [eamil]
-  );
-  const onChangePassword = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      const userPassword = event.target.value;
-      setPassword(userPassword);
-    },
-    [password]
-  );
+  const email = useInput('');
+  const password = useInput('');
 
   return (
     <LoginContainer>
@@ -37,14 +22,16 @@ const Login = () => {
         <LogoWrap>Logo</LogoWrap>
         <InputBox>
           <LoginInput
+            value={email.value}
             placeHloder="이메일을 입력해주세요"
             type="text"
-            onChangeHandler={onChangeEmail}
+            onChangeHandler={email.onChange}
           />
           <LoginInput
+            value={password.value}
             placeHloder="비밀번호를 입력해주세요"
             type="password"
-            onChangeHandler={onChangePassword}
+            onChangeHandler={password.onChange}
           />
         </InputBox>
         <ErrorBox></ErrorBox>
@@ -64,9 +51,9 @@ const LoginContainer = styled.div`
 `;
 
 const LoginForm = styled.form`
-  width: 40%;
+  max-width: 420px;
   padding: 60px 70px;
-  border: 1px solid #9e9e9e;
+  border: 1px solid ${({ theme }) => theme.colors.black500};
 `;
 
 const LogoWrap = styled.h1`
