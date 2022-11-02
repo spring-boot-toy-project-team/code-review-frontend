@@ -21,6 +21,10 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+button{
+  cursor: pointer;
+}
 `;
 
 // @media (prefers-color-scheme: dark) {
