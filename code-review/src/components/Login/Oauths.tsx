@@ -18,6 +18,8 @@ const Oauths = () => {
           key={index}
           icon={item.icon}
           background={item.background}
+          type={item.type}
+          href={item.href}
         />
       ))}
     </ButtonContainer>
