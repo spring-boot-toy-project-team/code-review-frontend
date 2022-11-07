@@ -1,19 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
-import reset from 'styled-reset';
 
 export const GlobalStyle = createGlobalStyle`
- ${reset}
-
 html, body{
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
 }
-
 * {
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 ol, ul, li{
@@ -22,7 +19,7 @@ ol, ul, li{
 
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration:none;
 }
 `;
 
