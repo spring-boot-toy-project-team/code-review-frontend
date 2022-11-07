@@ -10,6 +10,7 @@ html, body{
 }
 * {
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 ol, ul, li{

@@ -9,8 +9,10 @@ export interface StyledProps {
   pl?: string;
   mb?: string;
   mx?: string;
+  mt?: string;
   fontSize?: string;
   opacity?: string;
   mdFontSize?: string;
   fontWeight?: string;
+  color?: string;
 }

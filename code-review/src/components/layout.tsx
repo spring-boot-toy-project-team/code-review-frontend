@@ -8,8 +8,7 @@ const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Root>
-        <GlobalStyle />
-
+        <Header />
         {children}
       </Root>
     </>
