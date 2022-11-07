@@ -1,18 +1,26 @@
 import { NextPage } from 'next';
-import Head from 'next/head';
+
 import Layout from '../components/layout';
+import Header from '../components/header';
+import styled from 'styled-components';
+
+import Promotion from '../components/mainPage/Promotion';
 
 const Main: NextPage = () => {
   return (
     <Layout>
-      <Head>
-        <title>코드리뷰</title>
-        <meta name="description" content="코드리뷰와 함께!" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div>Main Page</div>
+      <MainContianer>
+        <Header />
+        <Promotion />
+      </MainContianer>
     </Layout>
   );
 };
 
 export default Main;
+
+const MainContianer = styled.div`
+  background-color: #2a51dd;
+  width: 100vw;
+  min-height: 100vh;
+`;
