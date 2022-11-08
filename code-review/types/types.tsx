@@ -15,4 +15,9 @@ export interface StyledProps {
   mdFontSize?: string;
   fontWeight?: string;
   color?: string;
+  bg?: string;
+  animation?: string;
+  visibility?: string;
+  orderToShow?: number;
+  show?: boolean;
 }
