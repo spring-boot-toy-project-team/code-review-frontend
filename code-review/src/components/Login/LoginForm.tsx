@@ -4,7 +4,8 @@ import React, { useEffect, useState } from 'react';
 import SubmitButton from '../../common/Button/SubmitButton';
 import LoginInput from '../../common/Input/LoginInput';
 import useInput from '../../hook/useInput';
-import { LoginEmailCheck } from '../../assets/FormCheck/LoginCheck';
+import { LoginCheckFnc } from '../../assets/FormCheck/Check';
+import { userLogin } from '../../config/Axios/api';
 
 const LoginFormCotaniner = styled.form`
   width: 100%;
@@ -40,7 +41,14 @@ const LoginForm = () => {
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    LoginEmailCheck(email.value, setErrorMsg, setShowMessage);
+    let body = {
+      email: email.value,
+      password: password.value,
+    };
+
+    LoginCheckFnc(email.value, password.value, setErrorMsg, setShowMessage)
+      ? userLogin(body).then((res) => console.log(res))
+      : null;
   };
   return (
     <LoginFormCotaniner onSubmit={onSubmitHandler}>

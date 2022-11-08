@@ -3,7 +3,13 @@ import styled from 'styled-components';
 
 const InputContainer = styled.div`
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+
+  > label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+  }
 
   > input {
     width: 100%;
@@ -24,11 +30,13 @@ interface Props {
   type: string;
   onChangeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
+  label: string;
 }
 
-const LoginInput = (props: Props) => {
+const SignupInput = (props: Props) => {
   return (
     <InputContainer>
+      <label>{props.label}</label>
       <input
         placeholder={props.placeHloder}
         type={props.type}
@@ -39,4 +47,4 @@ const LoginInput = (props: Props) => {
   );
 };
 
-export default LoginInput;
+export default SignupInput;
