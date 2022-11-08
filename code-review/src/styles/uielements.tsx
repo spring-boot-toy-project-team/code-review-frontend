@@ -1,5 +1,6 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { StyledProps } from '../../types/types';
+import { opacity } from './keyfreams';
 
 export const WrapUI = styled.div`
   background-color: red;
@@ -30,20 +31,6 @@ export const FlexWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const opacity = keyframes`
- 0% {
-    opacity: 0;
-  }
- 70% {
-    opacity: 0.5;
-   
-  }
-  100% {
-    opacity: 1;
-   
-  }
 `;
 
 export const H1 = styled.h1<StyledProps>`

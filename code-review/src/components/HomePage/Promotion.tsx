@@ -1,12 +1,10 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import Meeting from '../../../public/assets/meeting.jpg';
 import Typed from 'react-typed';
 import Image from 'next/image';
 import { FaArrowDown } from 'react-icons/fa';
-import { ContentWrap, H1, opacity } from '../../styles/uielements';
-import { useState, useRef, useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
-import { useCallbackRef, createCallbackRef } from 'use-callback-ref';
+import { ContentWrap, H1 } from '../../styles/uielements';
+import { opacity, movingArrow } from '../../styles/keyfreams';
 
 export default function Promotion({ desRef }: any) {
   const onDesClick = () => {
@@ -60,29 +58,6 @@ export default function Promotion({ desRef }: any) {
     </ProContainer>
   );
 }
-
-const movingArrow = keyframes`
-    0% {
-    opacity: 0;
-    transform: translateY(0)
-  }
-  30% {
-    opacity: 0.3;
-    transform: translateY(1.5em)
-  }
-  50% {
-    opacity: 0.8;
-    transform: translateY(0em)
-  }
-  70% {
-    opacity: 0.9;
-    transform: translateY(1.5em)
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0em)
-  }
-`;
 
 const ArrowWrap = styled.div`
   margin-top: 25px;

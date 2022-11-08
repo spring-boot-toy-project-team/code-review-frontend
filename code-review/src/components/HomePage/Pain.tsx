@@ -1,7 +1,8 @@
-import styled, { keyframes } from 'styled-components';
-import { Container, opacity } from '../../styles/uielements';
+import styled from 'styled-components';
+import { Container } from '../../styles/uielements';
 import Painful from '../../../public/assets/painful.jpg';
 import Image from 'next/image';
+import { opacity2 } from '../../styles/keyfreams';
 
 export default function Pain() {
   return (
@@ -13,16 +14,6 @@ export default function Pain() {
     </Container>
   );
 }
-
-const opacity2 = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100%{
-    opacity: 0.6;
-  }
-
-`;
 
 const BackgroundDiv = styled.div`
   position: relative;

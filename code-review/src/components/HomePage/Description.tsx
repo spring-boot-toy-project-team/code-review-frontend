@@ -1,6 +1,5 @@
-import styled from 'styled-components';
 import React, { forwardRef } from 'react';
-import { Container, ContentWrap, H1, FlexWrap } from '../../styles/uielements';
+import { Container, ContentWrap, H1 } from '../../styles/uielements';
 import { useState, useRef, useEffect } from 'react';
 
 const Description = forwardRef<HTMLInputElement, any>((props, ref) => {
