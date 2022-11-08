@@ -2,8 +2,11 @@ import styled, { keyframes } from 'styled-components';
 import Meeting from '../../../public/assets/meeting.jpg';
 import Typed from 'react-typed';
 import Image from 'next/image';
-import { StyledProps } from '../../../types/types';
 import { FaArrowDown } from 'react-icons/fa';
+import { ContentWrap, H1, opacity } from '../../styles/uielements';
+import { useState, useRef, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { useCallbackRef, createCallbackRef } from 'use-callback-ref';
 
 export default function Promotion({ desRef }: any) {
   const onDesClick = () => {
@@ -11,8 +14,8 @@ export default function Promotion({ desRef }: any) {
   };
 
   return (
-    <ContentWrap>
-      <Content>
+    <ProContainer>
+      <ContentWrap>
         <H1 opacity={'0.5'} mdFontSize={'25px'} fontSize={'20px'}>
           개발자의 빠른 성장
         </H1>
@@ -53,8 +56,8 @@ export default function Promotion({ desRef }: any) {
             }}
           />
         </ArrowWrap>
-      </Content>
-    </ContentWrap>
+      </ContentWrap>
+    </ProContainer>
   );
 }
 
@@ -80,19 +83,6 @@ const movingArrow = keyframes`
     transform: translateY(0em)
   }
 `;
-const opacity = keyframes`
- 0% {
-    opacity: 0;
-  }
- 70% {
-    opacity: 0.5;
-   
-  }
-  100% {
-    opacity: 1;
-   
-  }
-`;
 
 const ArrowWrap = styled.div`
   margin-top: 25px;
@@ -104,12 +94,6 @@ const ArrowWrap = styled.div`
   }
 `;
 
-const TypedWrap = styled.div`
-  display: flex;
-  width: 100%;
-  margin-bottom: 30px;
-  justify-content: center;
-`;
 const ImgWrap = styled.div`
   margin-left: auto;
   margin-right: auto;
@@ -131,24 +115,7 @@ const ImgWrap = styled.div`
   }
 `;
 
-export const H1 = styled.div<StyledProps>`
-  font-size: ${(props) => props.fontSize || '45px'};
-  margin-bottom: ${(props) => props.mb || '15px'};
-  font-weight: ${(props) => props.fontWeight};
-  opacity: ${(props) => props.opacity};
-  margin: ${(props) => props.mx};
-  margin-top: ${(props) => props.mt};
-  color: ${(props) => props.color};
-
-  @media (min-width: 768px) {
-    font-size: ${(props) => props.mdFontSize || '45px'};
-    margin-bottom: ${(props) => props.mb || '30px'};
-    opacity: ${(props) => props.opacity};
-    margin: ${(props) => props.mx};
-  }
-`;
-
-const ContentWrap = styled.div`
+const ProContainer = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
@@ -176,14 +143,9 @@ const ContentWrap = styled.div`
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#2a51dd",GradientType=1);
 `;
-const Content = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 30px;
+export const TypedWrap = styled.div`
   display: flex;
-  flex-direction: column;
-  text-align: center;
+  width: 100%;
+  margin-bottom: 30px;
   justify-content: center;
-  padding-top: 120px;
-  text-align: center;
 `;

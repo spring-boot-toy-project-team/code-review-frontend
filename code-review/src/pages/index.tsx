@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Promotion from '../components/mainPage/Promotion';
 import Description from '../components/mainPage/Description';
 import { useRef } from 'react';
+import Pain from '../components/mainPage/Pain';
 
 const Main: NextPage = () => {
   const proRef = useRef<HTMLInputElement>(null);
@@ -15,6 +16,7 @@ const Main: NextPage = () => {
     <MainContianer>
       <Promotion desRef={desRef} />
       <Description ref={desRef} />
+      <Pain />
     </MainContianer>
   );
 };
@@ -22,7 +24,6 @@ const Main: NextPage = () => {
 export default Main;
 
 const MainContianer = styled.div`
-  background-color: #2a51dd;
   min-height: 100vh;
   scroll-snap-type: y proximity;
   overflow-y: scroll;
