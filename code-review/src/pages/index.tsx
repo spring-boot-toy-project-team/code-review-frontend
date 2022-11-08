@@ -1,15 +1,11 @@
 import { NextPage } from 'next';
-import Layout from '../components/layout';
-import Header from '../components/header';
 import styled from 'styled-components';
-
-import Promotion from '../components/mainPage/Promotion';
-import Description from '../components/mainPage/Description';
+import Promotion from '../components/HomePage/Promotion';
+import Description from '../components/HomePage/Description';
 import { useRef } from 'react';
-import Pain from '../components/mainPage/Pain';
+import Pain from '../components/HomePage/Pain';
 
-const Main: NextPage = () => {
-  const proRef = useRef<HTMLInputElement>(null);
+const Home: NextPage = () => {
   const desRef = useRef<HTMLInputElement>(null);
 
   return (
@@ -21,7 +17,7 @@ const Main: NextPage = () => {
   );
 };
 
-export default Main;
+export default Home;
 
 const MainContianer = styled.div`
   min-height: 100vh;

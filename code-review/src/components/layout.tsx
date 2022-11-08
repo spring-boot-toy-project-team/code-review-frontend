@@ -1,7 +1,6 @@
 import Header from './header';
-import Footer from './footer';
 import styled from 'styled-components';
-import { GlobalStyle } from '../styles/global-style';
+import { GlobalStyle } from '../../styles/global-style';
 
 type Props = { children: React.ReactNode };
 const Layout: React.FC<Props> = ({ children }) => {
@@ -9,6 +8,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     <>
       <Root>
         <Header />
+        <GlobalStyle />
         {children}
       </Root>
     </>
