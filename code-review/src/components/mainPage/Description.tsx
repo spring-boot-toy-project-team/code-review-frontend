@@ -47,7 +47,7 @@ const Description = forwardRef<HTMLInputElement, any>((props, ref) => {
           orderToShow={2}
           show={show}
         >
-          지금까지 느껴보지 못했던 다양한 코드와 사람들!
+          지금까지 경험하지 못한 다양한 코드와 사람들!
         </H1>
 
         <H1
