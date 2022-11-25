@@ -23,6 +23,11 @@ const InputContainer = styled.div`
     outline: none;
     border-bottom: 1px solid black;
   }
+  > span {
+    display: block;
+    margin-top: 15px;
+    color: red;
+  }
 `;
 
 interface Props {
@@ -31,6 +36,9 @@ interface Props {
   onChangeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
   label: string;
+  useRef: React.RefObject<HTMLInputElement>;
+  validation: string;
+  visible: boolean;
 }
 
 const SignupInput = (props: Props) => {
@@ -38,11 +46,13 @@ const SignupInput = (props: Props) => {
     <InputContainer>
       <label>{props.label}</label>
       <input
+        ref={props.useRef}
         placeholder={props.placeHloder}
         type={props.type}
         onChange={props.onChangeHandler}
         value={props.value}
       />
+      {props.visible && <span>{props.validation}</span>}
     </InputContainer>
   );
 };
