@@ -6,6 +6,7 @@ import { useRef, useCallback, useEffect, useState } from 'react';
 import Pain from '../components/HomePage/Pain';
 import { useScrollPosition } from '../hooks/useScrollPosition';
 import Footer from '../components/footer';
+import Cards from '../components/HomePage/Cards';
 
 const Home: NextPage = () => {
   const desRef = useRef<HTMLInputElement>(null);
@@ -16,7 +17,8 @@ const Home: NextPage = () => {
       <Promotion desRef={desRef} />
       <Description ref={desRef} />
       <Pain scrollPosition={scrollPosition} scrollHeight={scrollHeight} />
-      <Footer />
+      <Cards />
+      {/* <Footer /> */}
     </MainContianer>
   );
 };

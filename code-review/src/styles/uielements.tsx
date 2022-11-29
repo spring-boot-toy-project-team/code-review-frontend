@@ -15,6 +15,7 @@ export const Container = styled.div<StyledProps>`
   scroll-snap-align: start;
   display: flex;
   justify-content: center;
+  flex-direction: ${(props) => props.direction || ''};
 `;
 
 export const ContentWrap = styled.div<StyledProps>`
@@ -29,10 +30,11 @@ export const ContentWrap = styled.div<StyledProps>`
   text-align: center;
   visibility: ${(props) => props.visibility || 'visible'};
 `;
-export const FlexWrap = styled.div`
+export const FlexWrap = styled.div<StyledProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: ${(props) => props.direction};
 `;
 
 export const H1 = styled.h1<StyledProps>`

@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { Container, ContentWrap, H1 } from '../../styles/uielements';
 import { opacity2 } from '../../styles/keyfreams';
-import { useEffect, useState } from 'react';
-import { useScrollPosition } from '../../hooks/useScrollPosition';
 import { StyledProps } from '../../../types/types';
 
 interface Props {
@@ -11,12 +9,11 @@ interface Props {
 }
 
 export default function Pain({ scrollPosition, scrollHeight }: Props) {
-  console.log(scrollHeight);
   return (
     <Container width="100%" bg={'white'}>
       <BackgroundDiv width={`${scrollPosition + 208}px`}>
         <ContentWrap>
-          <H1 mdFontSize="60px" color="white" fontSize="30px" mb="70px">
+          <H1 mdFontSize="60px" color="white" fontSize="22px" mb="70px">
             프로그래밍은 더이상 혼자만의 싸움이 아닙니다.
           </H1>
           <H1 mdFontSize="35px" color="#2a51dd" fontSize="20px">
@@ -30,7 +27,7 @@ export default function Pain({ scrollPosition, scrollHeight }: Props) {
 
 const BackgroundDiv = styled.div<StyledProps>`
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
     url('assets/painful.jpg');
   background-size: cover;
   background-repeat: no-repeat;

@@ -90,7 +90,7 @@ const ImgWrap = styled.div`
   }
 `;
 
-const ProContainer = styled.div`
+export const ProContainer = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;

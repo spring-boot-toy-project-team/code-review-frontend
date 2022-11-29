@@ -13,7 +13,6 @@ const Description = forwardRef<HTMLInputElement, any>((props, ref) => {
       if (entry.isIntersecting) setShow(true);
       else setShow(false);
     });
-    console.log(observer);
     observer.observe(contentRef.current);
   }, []);
 
