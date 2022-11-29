@@ -5,8 +5,13 @@ import Image from 'next/image';
 import { FaArrowDown } from 'react-icons/fa';
 import { ContentWrap, H1 } from '../../styles/uielements';
 import { opacity, movingArrow } from '../../styles/keyfreams';
+import { Ref, forwardRef, useEffect, FC, MutableRefObject } from 'react';
 
-export default function Promotion({ desRef }: any) {
+interface Props {
+  desRef: MutableRefObject<HTMLDivElement | null>;
+}
+
+export default function Promotion({ desRef }: Props) {
   const onDesClick = () => {
     desRef.current?.scrollIntoView({ behavior: 'smooth' });
   };

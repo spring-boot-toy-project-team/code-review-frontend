@@ -9,7 +9,7 @@ import Footer from '../components/footer';
 import Cards from '../components/HomePage/Cards';
 
 const Home: NextPage = () => {
-  const desRef = useRef<HTMLInputElement>(null);
+  const desRef = useRef<HTMLDivElement | null>(null);
   const { scrollPosition, scrollHeight } = useScrollPosition();
 
   return (

@@ -3,9 +3,9 @@ import { Container, ContentWrap, H1 } from '../../styles/uielements';
 import { useState, useRef, useEffect } from 'react';
 import { useScrollPosition } from '../../hooks/useScrollPosition';
 
-const Description = forwardRef<HTMLInputElement, any>((props, ref) => {
+const Description = forwardRef<HTMLDivElement>((props, ref) => {
   const [show, setShow] = useState(false);
-  const contentRef = useRef<any>(null);
+  const contentRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -13,7 +13,7 @@ const Description = forwardRef<HTMLInputElement, any>((props, ref) => {
       if (entry.isIntersecting) setShow(true);
       else setShow(false);
     });
-    observer.observe(contentRef.current);
+    observer.observe(contentRef.current as Element);
   }, []);
 
   return (

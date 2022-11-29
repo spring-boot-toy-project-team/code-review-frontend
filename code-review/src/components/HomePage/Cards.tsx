@@ -19,7 +19,7 @@ export default function Cards() {
   };
 
   return (
-    <Container width="100%" direction="column">
+    <Container height={'90vh'} direction="column">
       <FlexWrap direction="column">
         <H1
           mdFontSize="50px"
@@ -153,8 +153,8 @@ const Card = styled.div`
 `;
 
 const Flex = styled.div`
-  width: 400px;
-  height: 450px;
+  width: 392px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
