@@ -132,6 +132,7 @@ const ImgWrap = styled.div`
   margin-bottom: 35px;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.44) 0px 3px 8px;
 `;
 
 const Card = styled.div`
@@ -145,7 +146,6 @@ const Card = styled.div`
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
-
   &:hover {
     transform: scale(1.06);
     transition-duration: 0.3s;
