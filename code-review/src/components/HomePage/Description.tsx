@@ -1,22 +1,24 @@
 import React, { forwardRef } from 'react';
 import { Container, ContentWrap, H1 } from '../../styles/uielements';
 import { useState, useRef, useEffect } from 'react';
+import { useScrollPosition } from '../../hooks/useScrollPosition';
 
 const Description = forwardRef<HTMLInputElement, any>((props, ref) => {
   const [show, setShow] = useState(false);
-  console.log(show);
   const contentRef = useRef<any>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
       if (entry.isIntersecting) setShow(true);
       else setShow(false);
     });
+    console.log(observer);
     observer.observe(contentRef.current);
   }, []);
 
   return (
-    <Container className="description" ref={ref} id="description">
+    <Container height="80vh" className="description" ref={ref} id="description">
       <ContentWrap>
         <H1
           ref={contentRef}
@@ -48,7 +50,6 @@ const Description = forwardRef<HTMLInputElement, any>((props, ref) => {
         >
           지금까지 경험하지 못한 다양한 코드와 사람들!
         </H1>
-
         <H1
           mdFontSize={'35px'}
           orderToShow={3}

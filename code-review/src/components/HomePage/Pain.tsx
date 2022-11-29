@@ -1,24 +1,44 @@
 import styled from 'styled-components';
-import { Container } from '../../styles/uielements';
-import Painful from '../../../public/assets/painful.jpg';
-import Image from 'next/image';
+import { Container, ContentWrap, H1 } from '../../styles/uielements';
 import { opacity2 } from '../../styles/keyfreams';
+import { useEffect, useState } from 'react';
+import { useScrollPosition } from '../../hooks/useScrollPosition';
+import { StyledProps } from '../../../types/types';
 
-export default function Pain() {
+interface Props {
+  scrollPosition: number;
+  scrollHeight: number;
+}
+
+export default function Pain({ scrollPosition, scrollHeight }: Props) {
+  console.log(scrollHeight);
   return (
-    <Container bg={'black'}>
-      <BackgroundDiv>
-        <Image src={Painful} fill alt="painful image" />
+    <Container width="100%" bg={'white'}>
+      <BackgroundDiv width={`${scrollPosition + 208}px`}>
+        <ContentWrap>
+          <H1 mdFontSize="60px" color="white" fontSize="30px" mb="70px">
+            프로그래밍은 더이상 혼자만의 싸움이 아닙니다.
+          </H1>
+          <H1 mdFontSize="35px" color="#2a51dd" fontSize="20px">
+            코드리뷰와 함께 문제를 해결해보세요!
+          </H1>
+        </ContentWrap>
       </BackgroundDiv>
-      Pain
     </Container>
   );
 }
 
-const BackgroundDiv = styled.div`
+const BackgroundDiv = styled.div<StyledProps>`
   position: relative;
-  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
+    url('assets/painful.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: ${(props) => props.width};
   height: 100%;
-  opacity: 0.6;
   animation: ${opacity2} 2s 0 ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 `;

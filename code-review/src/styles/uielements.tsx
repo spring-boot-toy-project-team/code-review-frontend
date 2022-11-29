@@ -10,9 +10,11 @@ export const WrapUI = styled.div`
 
 export const Container = styled.div<StyledProps>`
   width: 100%;
-  height: 100vh;
+  height: ${(props) => props.height || '100vh'};
   background-color: ${(props) => props.bg || 'white'};
   scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
 `;
 
 export const ContentWrap = styled.div<StyledProps>`
