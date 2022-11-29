@@ -27,8 +27,8 @@ export default function Pain({ scrollPosition, scrollHeight }: Props) {
 
 const BackgroundDiv = styled.div<StyledProps>`
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
-    url('assets/painful.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)),
+    url('assets/black.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   width: ${(props) => props.width};

@@ -9,11 +9,13 @@ export const WrapUI = styled.div`
 `;
 
 export const Container = styled.div<StyledProps>`
+  position: relative;
   width: 100%;
   height: ${(props) => props.height || '100vh'};
   background-color: ${(props) => props.bg || 'white'};
   scroll-snap-align: start;
   display: flex;
+  align-items: center;
   justify-content: center;
   flex-direction: ${(props) => props.direction || ''};
 `;
@@ -35,6 +37,7 @@ export const FlexWrap = styled.div<StyledProps>`
   justify-content: center;
   align-items: center;
   flex-direction: ${(props) => props.direction};
+  margin-bottom: ${(props) => props.mb};
 `;
 
 export const H1 = styled.h1<StyledProps>`
@@ -45,6 +48,7 @@ export const H1 = styled.h1<StyledProps>`
   margin: ${(props) => props.mx};
   margin-top: ${(props) => props.mt};
   color: ${(props) => props.color};
+  text-align: center;
   /* visibility: ${(props) => (props.show === true ? 'visible' : 'hidden')}; */
 
   ${(props) =>
