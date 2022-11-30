@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
-import { Container, ContentWrap, H1 } from '../../styles/uielements';
+import { Container, ContentWrap, H1 } from '../styles/uielements';
 import { useState, useRef, useEffect } from 'react';
-import { useScrollPosition } from '../../hooks/useScrollPosition';
+import { useScrollPosition } from '../hooks/useScrollPosition';
 
 const Description = forwardRef<HTMLDivElement>((props, ref) => {
   const [show, setShow] = useState(false);

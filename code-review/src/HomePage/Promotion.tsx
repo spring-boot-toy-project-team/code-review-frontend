@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import Meeting from '../../../public/assets/meeting.jpg';
+import Meeting from '../../public/assets/meeting.jpg';
 import Typed from 'react-typed';
 import Image from 'next/image';
 import { FaArrowDown } from 'react-icons/fa';
-import { ContentWrap, H1 } from '../../styles/uielements';
-import { opacity, movingArrow } from '../../styles/keyfreams';
+import { ContentWrap, H1 } from '../styles/uielements';
+import { opacity, movingArrow } from '../styles/keyfreams';
 import { Ref, forwardRef, useEffect, FC, MutableRefObject } from 'react';
 
 interface Props {
