@@ -1,4 +1,4 @@
-import { FlexWrap, H1 } from '../styles/uielements';
+import { FlexWrap, H1 } from '../../styles/uielements';
 import styled from 'styled-components';
 import {
   FaGithubSquare,
@@ -68,7 +68,7 @@ const IconWrap = styled.div`
 const FooterContainer = styled.div`
   width: 100%;
   height: 350px;
-  background-color: black;
+  background-color: #191f28;
   color: white;
   padding: 30px 40px;
   display: flex;

@@ -49,7 +49,9 @@ const Header = () => {
                 padding={'20px'}
                 mb={'20px'}
               >
-                <Link href={link.path}>{link.name}</Link>
+                <Link onClick={handleNav} href={link.path}>
+                  {link.name}
+                </Link>
               </LinkBox>
             ))}
           </MiniLinkUl>
@@ -62,7 +64,7 @@ const Header = () => {
 export default Header;
 
 const SlideMenu = styled.div<StyledProps>`
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   left: ${(props) => props.left};
   top: 0;
@@ -109,7 +111,7 @@ const Logo = styled.div<StyledProps>`
 `;
 
 const HeaderContainer = styled.div`
-  z-index: 1;
+  z-index: 2;
   width: 100vw;
   height: 100px;
   background-color: white;
@@ -134,6 +136,7 @@ const HeaderWrap = styled.div`
   }
 `;
 const LinkBox = styled.span<StyledProps>`
+  z-index: 2;
   width: 90%;
   height: 100%;
   display: inline;

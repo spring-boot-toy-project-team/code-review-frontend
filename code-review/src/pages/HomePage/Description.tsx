@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
-import { Container, ContentWrap, H1 } from '../styles/uielements';
+import { Container, ContentWrap, H1 } from '../../../styles/uielements';
 import { useState, useRef, useEffect } from 'react';
-import { useScrollPosition } from '../hooks/useScrollPosition';
+import { useScrollPosition } from '../../hooks/useScrollPosition';
 
 const Description = forwardRef<HTMLDivElement>((props, ref) => {
   const [show, setShow] = useState(false);
@@ -30,7 +30,7 @@ const Description = forwardRef<HTMLDivElement>((props, ref) => {
           왜 코드리뷰가 필요할까요?
         </H1>
         <H1
-          opacity={'0.6'}
+          opacity={'0.8'}
           mdFontSize={'25px'}
           orderToShow={2}
           fontSize={'20px'}

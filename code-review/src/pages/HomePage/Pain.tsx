@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Container, ContentWrap, H1 } from '../styles/uielements';
-import { opacity2 } from '../styles/keyfreams';
-import { StyledProps } from '../../types/types';
+import { Container, ContentWrap, H1 } from '../../../styles/uielements';
+import { opacity2 } from '../../../styles/keyfreams';
+import { StyledProps } from '../../../types/types';
 
 interface Props {
   scrollPosition: number;
@@ -11,7 +11,7 @@ interface Props {
 export default function Pain({ scrollPosition, scrollHeight }: Props) {
   return (
     <Container width="100%" bg={'white'}>
-      <BackgroundDiv width={`${scrollPosition + 208}px`}>
+      <BackgroundDiv width={`${scrollPosition + 250}px`}>
         <ContentWrap>
           <H1 mdFontSize="60px" color="white" fontSize="22px" mb="70px">
             프로그래밍은 더이상 혼자만의 싸움이 아닙니다.

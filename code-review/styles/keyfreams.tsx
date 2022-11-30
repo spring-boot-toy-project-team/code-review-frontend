@@ -19,7 +19,7 @@ export const opacity = keyframes`
    
   }
   100% {
-    opacity: 1;
+    opacity: 0.8;
    
   }
 `;

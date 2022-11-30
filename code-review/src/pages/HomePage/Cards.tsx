@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { Container, FlexWrap, H1 } from '../styles/uielements';
-import Share from '../../public/assets/slide/conversation.jpg';
-import Code from '../../public/assets/slide/code1.jpg';
-import Question from '../../public/assets/slide/question.jpg';
-import Chat from '../../public/assets/slide/moniter.jpg';
-import Productive from '../../public/assets/slide/productive.jpeg';
+import { Container, FlexWrap, H1 } from '../../../styles/uielements';
+import Share from '../../../public/assets/slide/conversation.jpg';
+import Code from '../../../public/assets/slide/code1.jpg';
+import Question from '../../../public/assets/slide/question.jpg';
+import Chat from '../../../public/assets/slide/moniter.jpg';
+import Productive from '../../../public/assets/slide/productive.jpeg';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 export default function Cards() {

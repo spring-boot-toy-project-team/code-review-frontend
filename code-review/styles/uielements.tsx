@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
-import { StyledProps } from '../../types/types';
+import { StyledProps } from '../types/types';
 import { opacity } from './keyfreams';
 
 export const WrapUI = styled.div`
   background-color: red;
   width: 100px;
-  height: 100px; 
+  height: 100px;
 `;
 
 export const Container = styled.div<StyledProps>`
@@ -45,6 +45,8 @@ export const FlexWrap = styled.div<StyledProps>`
   flex-direction: ${(props) => props.direction};
   margin-bottom: ${(props) => props.mb};
   color: ${(props) => props.color};
+  position: relative;
+  width: ${(props) => props.width};
 `;
 
 export const H1 = styled.h1<StyledProps>`
@@ -55,7 +57,7 @@ export const H1 = styled.h1<StyledProps>`
   margin: ${(props) => props.mx};
   margin-top: ${(props) => props.mt};
   color: ${(props) => props.color};
-  text-align: center;
+  text-align: ${(props) => props.textAlign || 'center'};
   /* visibility: ${(props) => (props.show === true ? 'visible' : 'hidden')}; */
 
   ${(props) =>
