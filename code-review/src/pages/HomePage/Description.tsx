@@ -71,11 +71,11 @@ const DesContentWrap = styled.div<StyledProps>`
   text-align: center;
   margin-top: 10px;
   transition: all 1s;
-  visibility: ${(props) =>
-    props.show === true ? 'visible' : 'hidden' || 'visible'};
+  visibility: ${({ show }) =>
+    show === true ? 'visible' : 'hidden' || 'visible'};
 
-  ${(props) =>
-    props.show &&
+  ${({ show }) =>
+    show &&
     css`
       animation: ${slideUp} 1s ease-in-out;
     `};

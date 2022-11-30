@@ -11,17 +11,17 @@ export const WrapUI = styled.div`
 export const Container = styled.div<StyledProps>`
   position: relative;
   width: 100%;
-  height: ${(props) => props.height || '100vh'};
-  background-color: ${(props) => props.bg || 'white'};
+  height: ${({ height }) => height || '100vh'};
+  background-color: ${({ bg }) => bg || 'white'};
   scroll-snap-align: start;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: ${(props) => props.direction || ''};
+  flex-direction: ${({ direction }) => direction || ''};
   transition: all 1s;
 
-  ${(props) =>
-    props.show &&
+  ${({ show }) =>
+    show &&
     css`
       animation: ${slideFromLeft} 0.7s ease-in-out;
     `};
@@ -45,52 +45,52 @@ export const ContentWrap = styled.div<StyledProps>`
   }
 `;
 export const FlexWrap = styled.div<StyledProps>`
-  padding: ${(props) => props.padding};
+  padding: ${({ padding }) => padding};
   display: flex;
-  justify-content: ${(props) => props.justify || 'center'};
-  align-items: ${(props) => props.items || 'center'};
-  flex-direction: ${(props) => props.direction};
-  margin-bottom: ${(props) => props.mb};
-  color: ${(props) => props.color};
+  justify-content: ${({ justify }) => justify || 'center'};
+  align-items: ${({ items }) => items || 'center'};
+  flex-direction: ${({ direction }) => direction};
+  margin-bottom: ${({ mb }) => mb};
+  color: ${({ color }) => color};
   position: relative;
-  width: ${(props) => props.width};
+  width: ${({ width }) => width};
 `;
 
 export const H1 = styled.h1<StyledProps>`
-  font-size: ${(props) => props.fontSize || '45px'};
-  margin-bottom: ${(props) => props.mb || '15px'};
-  font-weight: ${(props) => props.fontWeight};
-  opacity: ${(props) => props.opacity};
-  margin: ${(props) => props.mx};
-  margin-top: ${(props) => props.mt};
-  color: ${(props) => props.color};
-  text-align: ${(props) => props.textAlign || 'center'};
+  font-size: ${({ fontSize }) => fontSize || '45px'};
+  margin-bottom: ${({ mb }) => mb || '15px'};
+  font-weight: ${({ fontWeight }) => fontWeight};
+  opacity: ${({ opacity }) => opacity};
+  margin: ${({ mx }) => mx};
+  margin-top: ${({ mt }) => mt};
+  color: ${({ color }) => color};
+  text-align: ${({ textAlign }) => textAlign || 'center'};
 
-  ${(props) =>
-    props.orderToShow === 1 &&
-    props.show &&
+  ${({ orderToShow, show }) =>
+    orderToShow === 1 &&
+    show &&
     css`
       animation: ${opacity} 1s ease-in-out;
     `}
 
-  ${(props) =>
-    props.orderToShow === 2 &&
-    props.show &&
+  ${({ orderToShow, show }) =>
+    orderToShow === 2 &&
+    show &&
     css`
       animation: ${opacity} 2s ease-in-out;
-    `}; // here
+    `};
 
-  ${(props) =>
-    props.orderToShow === 3 &&
-    props.show &&
+  ${({ orderToShow, show }) =>
+    orderToShow === 3 &&
+    show &&
     css`
       animation: ${opacity} 3s ease-in-out;
     `}
 
   @media (min-width: 768px) {
-    font-size: ${(props) => props.mdFontSize || '45px'};
-    margin-bottom: ${(props) => props.mb || '30px'};
-    opacity: ${(props) => props.opacity};
-    margin: ${(props) => props.mx};
+    font-size: ${({ mdFontSize }) => mdFontSize || '45px'};
+    margin-bottom: ${({ mb }) => mb || '30px'};
+    opacity: ${({ opacity }) => opacity};
+    margin: ${({ mx }) => mx};
   }
 `;

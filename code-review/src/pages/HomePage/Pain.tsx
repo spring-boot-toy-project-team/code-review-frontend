@@ -31,7 +31,7 @@ const BackgroundDiv = styled.div<StyledProps>`
     url('assets/black.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  width: ${(props) => props.width};
+  width: ${({ width }) => width};
   height: 100%;
   animation: ${opacity2} 2s 0 ease-in;
   display: flex;
