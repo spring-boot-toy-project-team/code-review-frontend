@@ -66,7 +66,7 @@ const SlideMenu = styled.div<StyledProps>`
   position: fixed;
   left: ${(props) => props.left};
   top: 0;
-  width: 60%;
+  width: 75%;
   height: 100%;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   transition: ease-in-out;
@@ -114,6 +114,8 @@ const HeaderContainer = styled.div`
   height: 100px;
   background-color: white;
   position: fixed;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 `;
 
 const HeaderWrap = styled.div`

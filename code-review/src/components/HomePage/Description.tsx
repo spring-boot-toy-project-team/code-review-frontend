@@ -11,7 +11,6 @@ const Description = forwardRef<HTMLDivElement>((props, ref) => {
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
       if (entry.isIntersecting) setShow(true);
-      else setShow(false);
     });
     observer.observe(contentRef.current as Element);
   }, []);

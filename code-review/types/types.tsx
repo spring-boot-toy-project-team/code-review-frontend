@@ -22,4 +22,6 @@ export interface StyledProps {
   show?: boolean;
   height?: string;
   width?: string;
+  justify?: string;
+  items?: string;
 }

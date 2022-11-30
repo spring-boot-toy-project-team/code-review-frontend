@@ -12,9 +12,10 @@ html, body{
     padding: 0;
 }
 
-* {
+*,div {
   box-sizing: border-box;
 }
+
 
 ol, ul, li{
     list-style: none;

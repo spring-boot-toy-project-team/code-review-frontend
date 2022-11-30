@@ -23,21 +23,28 @@ export const Container = styled.div<StyledProps>`
 export const ContentWrap = styled.div<StyledProps>`
   width: 100%;
   height: 100%;
-  padding: 30px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
   padding-top: 100px;
   text-align: center;
+  margin-top: 10px;
   visibility: ${(props) => props.visibility || 'visible'};
+
+  @media (min-width: 768px) {
+    margin-top: 0px;
+  }
 `;
 export const FlexWrap = styled.div<StyledProps>`
+  padding: ${(props) => props.padding};
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: ${(props) => props.justify || 'center'};
+  align-items: ${(props) => props.items || 'center'};
   flex-direction: ${(props) => props.direction};
   margin-bottom: ${(props) => props.mb};
+  color: ${(props) => props.color};
 `;
 
 export const H1 = styled.h1<StyledProps>`
