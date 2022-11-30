@@ -1,12 +1,12 @@
 import { NextPage } from 'next';
 import styled from 'styled-components';
-import Promotion from '../components/HomePage/Promotion';
-import Description from '../components/HomePage/Description';
+import Promotion from '../HomePage/Promotion';
+import Description from '../HomePage/Description';
 import { useRef, useCallback, useEffect, useState } from 'react';
-import Pain from '../components/HomePage/Pain';
+import Pain from '../HomePage/Pain';
 import { useScrollPosition } from '../hooks/useScrollPosition';
 import Footer from '../components/footer';
-import Cards from '../components/HomePage/Cards';
+import Cards from '../HomePage/Cards';
 import Head from 'next/head';
 
 const Home: NextPage = () => {
