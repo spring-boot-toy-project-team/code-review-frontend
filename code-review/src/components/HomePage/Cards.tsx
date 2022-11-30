@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Image from 'next/image';
 import styled from 'styled-components';
 import { Container, FlexWrap, H1 } from '../../styles/uielements';
@@ -166,4 +167,17 @@ const Flex = styled.div`
   @media (min-width: 1028px) {
     width: 1108px;
   }
+=======
+import styled from 'styled-components';
+
+export default function Cards() {
+  return <CardsContainer>Cards</CardsContainer>;
+}
+
+const CardsContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  scroll-snap-align: start;
+>>>>>>> 78d68695883b960e488afd2d8d121d6a46d702a0
 `;

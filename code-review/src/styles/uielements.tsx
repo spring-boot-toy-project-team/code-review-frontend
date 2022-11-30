@@ -5,7 +5,7 @@ import { opacity } from './keyfreams';
 export const WrapUI = styled.div`
   background-color: red;
   width: 100px;
-  height: 100px;
+  height: 100px; 
 `;
 
 export const Container = styled.div<StyledProps>`

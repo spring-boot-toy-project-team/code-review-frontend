@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+<<<<<<< HEAD
 import { Container, ContentWrap, H1 } from '../../styles/uielements';
 import { opacity2 } from '../../styles/keyfreams';
 import { StyledProps } from '../../../types/types';
@@ -21,10 +22,25 @@ export default function Pain({ scrollPosition, scrollHeight }: Props) {
           </H1>
         </ContentWrap>
       </BackgroundDiv>
+=======
+import { Container } from '../../styles/uielements';
+import Painful from '../../../public/assets/painful.jpg';
+import Image from 'next/image';
+import { opacity2 } from '../../styles/keyfreams';
+
+export default function Pain() {
+  return (
+    <Container bg={'black'}>
+      <BackgroundDiv>
+        <Image src={Painful} fill alt="painful image" />
+      </BackgroundDiv>
+      Pain
+>>>>>>> 78d68695883b960e488afd2d8d121d6a46d702a0
     </Container>
   );
 }
 
+<<<<<<< HEAD
 const BackgroundDiv = styled.div<StyledProps>`
   position: relative;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)),
@@ -38,4 +54,12 @@ const BackgroundDiv = styled.div<StyledProps>`
   justify-content: center;
   align-items: center;
   font-weight: bold;
+=======
+const BackgroundDiv = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  animation: ${opacity2} 2s 0 ease-in;
+>>>>>>> 78d68695883b960e488afd2d8d121d6a46d702a0
 `;
