@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { StyledProps } from '../types/types';
-import { opacity } from './keyfreams';
+import { opacity, slideFromLeft } from './keyfreams';
 
 export const WrapUI = styled.div`
   background-color: red;
@@ -18,6 +18,13 @@ export const Container = styled.div<StyledProps>`
   align-items: center;
   justify-content: center;
   flex-direction: ${(props) => props.direction || ''};
+  transition: all 1s;
+
+  ${(props) =>
+    props.show &&
+    css`
+      animation: ${slideFromLeft} 0.7s ease-in-out;
+    `};
 `;
 
 export const ContentWrap = styled.div<StyledProps>`
@@ -58,15 +65,13 @@ export const H1 = styled.h1<StyledProps>`
   margin-top: ${(props) => props.mt};
   color: ${(props) => props.color};
   text-align: ${(props) => props.textAlign || 'center'};
-  /* visibility: ${(props) => (props.show === true ? 'visible' : 'hidden')}; */
 
   ${(props) =>
     props.orderToShow === 1 &&
     props.show &&
     css`
-  animation:  animation: ${opacity} 1s ease-in-out;;
-
-`}
+      animation: ${opacity} 1s ease-in-out;
+    `}
 
   ${(props) =>
     props.orderToShow === 2 &&

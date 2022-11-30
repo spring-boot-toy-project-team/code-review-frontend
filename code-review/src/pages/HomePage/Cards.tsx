@@ -7,8 +7,11 @@ import Question from '../../../public/assets/slide/question.jpg';
 import Chat from '../../../public/assets/slide/moniter.jpg';
 import Productive from '../../../public/assets/slide/productive.jpeg';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import useObserver from '../../hooks/useObserver';
+import { useRef } from 'react';
 
 export default function Cards() {
+  const cardsRef = useRef<HTMLDivElement>(null);
   const slideLeft = () => {
     let slider = document.getElementById('slider');
     slider!.scrollLeft = slider!.scrollLeft - 350;
@@ -18,8 +21,10 @@ export default function Cards() {
     slider!.scrollLeft = slider!.scrollLeft + 350;
   };
 
+  const { show, setShow } = useObserver(cardsRef);
+
   return (
-    <Container height={'90vh'} direction="column">
+    <Container show={show} ref={cardsRef} height={'90vh'} direction="column">
       <FlexWrap direction="column">
         <H1
           mdFontSize="50px"

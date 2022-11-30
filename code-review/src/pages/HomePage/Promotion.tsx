@@ -4,7 +4,7 @@ import Typed from 'react-typed';
 import Image from 'next/image';
 import { FaArrowDown } from 'react-icons/fa';
 import { ContentWrap, H1 } from '../../../styles/uielements';
-import { opacity, movingArrow } from '../../../styles/keyfreams';
+import { opacity, movingArrow, slideUp } from '../../../styles/keyfreams';
 import { MutableRefObject } from 'react';
 
 interface Props {
@@ -80,7 +80,7 @@ const ImgWrap = styled.div`
   width: 90%;
   height: 300px;
   position: relative;
-  animation: ${opacity} 1.5s 1 ease-in;
+  animation: ${opacity} 0.5s 1 ease-in;
 
   @media (min-width: 640px) {
     width: 550px;

@@ -1,23 +1,17 @@
 import React, { forwardRef } from 'react';
 import { Container, ContentWrap, H1 } from '../../../styles/uielements';
-import { useState, useRef, useEffect } from 'react';
-import { useScrollPosition } from '../../hooks/useScrollPosition';
+import { useRef } from 'react';
+import useObserver from '../../hooks/useObserver';
+import styled, { css } from 'styled-components';
+import { StyledProps } from '../../../types/types';
+import { slideFromLeft, slideUp } from '../../../styles/keyfreams';
 
 const Description = forwardRef<HTMLDivElement>((props, ref) => {
-  const [show, setShow] = useState(false);
   const contentRef = useRef<HTMLHeadingElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      if (entry.isIntersecting) setShow(true);
-    });
-    observer.observe(contentRef.current as Element);
-  }, []);
-
+  const { show, setShow } = useObserver(contentRef);
   return (
     <Container height="80vh" className="description" ref={ref} id="description">
-      <ContentWrap>
+      <DesContentWrap show={show}>
         <H1
           ref={contentRef}
           mdFontSize="50px"
@@ -58,9 +52,35 @@ const Description = forwardRef<HTMLDivElement>((props, ref) => {
         >
           지금 바로 코드리뷰에서 만나보세요
         </H1>
-      </ContentWrap>
+      </DesContentWrap>
     </Container>
   );
 });
 
 export default Description;
+
+const DesContentWrap = styled.div<StyledProps>`
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  padding-top: 100px;
+  text-align: center;
+  margin-top: 10px;
+  transition: all 1s;
+  visibility: ${(props) =>
+    props.show === true ? 'visible' : 'hidden' || 'visible'};
+
+  ${(props) =>
+    props.show &&
+    css`
+      animation: ${slideUp} 1s ease-in-out;
+    `};
+
+  @media (min-width: 768px) {
+    margin-top: 0px;
+  }
+`;

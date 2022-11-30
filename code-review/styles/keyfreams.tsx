@@ -10,6 +10,30 @@ export const opacity2 = keyframes`
 
 `;
 
+export const slideFromLeft = keyframes`
+ 0% {
+  opacity: 0;
+ transform: translate(-150px,0px);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0px,0px);
+  
+  }
+`;
+
+export const slideUp = keyframes`
+ 0% {
+  opacity: 0;
+ transform: translate(0px,100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0px,0px);
+  
+  }
+`;
+
 export const opacity = keyframes`
  0% {
     opacity: 0;
