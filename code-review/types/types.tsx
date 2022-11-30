@@ -20,4 +20,11 @@ export interface StyledProps {
   visibility?: string;
   orderToShow?: number;
   show?: boolean;
+<<<<<<< HEAD
+  height?: string;
+  width?: string;
+  justify?: string;
+  items?: string;
+=======
+>>>>>>> 78d68695883b960e488afd2d8d121d6a46d702a0
 }

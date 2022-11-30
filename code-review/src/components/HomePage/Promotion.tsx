@@ -5,32 +5,37 @@ import Image from 'next/image';
 import { FaArrowDown } from 'react-icons/fa';
 import { ContentWrap, H1 } from '../../styles/uielements';
 import { opacity, movingArrow } from '../../styles/keyfreams';
+import { Ref, forwardRef, useEffect, FC, MutableRefObject } from 'react';
 
-export default function Promotion({ desRef }: any) {
+interface Props {
+  desRef: MutableRefObject<HTMLDivElement | null>;
+}
+
+export default function Promotion({ desRef }: Props) {
   const onDesClick = () => {
     desRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <ProContainer>
-      <ContentWrap>
-        <H1 opacity={'0.5'} mdFontSize={'25px'} fontSize={'20px'}>
+      <ContentWrap justify="start">
+        <H1 opacity={'0.5'} mdFontSize={'25px'} fontSize={'17px'}>
           개발자의 빠른 성장
         </H1>
         <H1
           mdFontSize="50px"
           color={'#2a51dd'}
           fontWeight={'800'}
-          fontSize={'30px'}
+          fontSize={'25px'}
         >
           코드리뷰와 함께 하세요
         </H1>
-        <H1 mdFontSize={'35px'} fontWeight={'700'} fontSize={'20px'} mb={'0px'}>
+        <H1 mdFontSize={'35px'} fontWeight={'700'} fontSize={'17px'} mb={'0px'}>
           <TypedWrap>
             <H1
               mdFontSize={'35px'}
               opacity={'0.8'}
-              fontSize={'20px'}
+              fontSize={'17px'}
               mx={'0px 15px 0px 15px'}
             >
               더 나은
@@ -60,7 +65,7 @@ export default function Promotion({ desRef }: any) {
 }
 
 const ArrowWrap = styled.div`
-  margin-top: 25px;
+  margin-top: 20px;
   color: white;
 
   animation: ${movingArrow} 2.5s 0s infinite linear alternate;
@@ -72,8 +77,8 @@ const ArrowWrap = styled.div`
 const ImgWrap = styled.div`
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
-  height: 400px;
+  width: 90%;
+  height: 300px;
   position: relative;
   animation: ${opacity} 1.5s 1 ease-in;
 
@@ -90,7 +95,7 @@ const ImgWrap = styled.div`
   }
 `;
 
-const ProContainer = styled.div`
+export const ProContainer = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
@@ -100,27 +105,20 @@ const ProContainer = styled.div`
   justify-content: center;
   color: black;
   scroll-snap-align: start;
-  background: rgb(255, 255, 255);
-  background: -moz-linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 32%,
-    rgba(42, 81, 221, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 32%,
-    rgba(42, 81, 221, 1) 100%
-  );
+  background: rgb(199, 213, 230);
   background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 32%,
-    rgba(42, 81, 221, 1) 100%
+    0deg,
+    rgba(199, 213, 230, 1) 0%,
+    rgba(255, 255, 255, 1) 59%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#2a51dd",GradientType=1);
 `;
 export const TypedWrap = styled.div`
   display: flex;
   width: 100%;
   margin-bottom: 30px;
   justify-content: center;
+
+  @media (min-width: 768px) {
+    margin-bottom: 50px;
+  }
 `;

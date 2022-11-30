@@ -5,32 +5,46 @@ import { opacity } from './keyfreams';
 export const WrapUI = styled.div`
   background-color: red;
   width: 100px;
-  height: 100px;
+  height: 100px; 
 `;
 
 export const Container = styled.div<StyledProps>`
+  position: relative;
   width: 100%;
-  height: 100vh;
+  height: ${(props) => props.height || '100vh'};
   background-color: ${(props) => props.bg || 'white'};
   scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: ${(props) => props.direction || ''};
 `;
 
 export const ContentWrap = styled.div<StyledProps>`
   width: 100%;
   height: 100%;
-  padding: 30px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
   padding-top: 100px;
   text-align: center;
+  margin-top: 10px;
   visibility: ${(props) => props.visibility || 'visible'};
+
+  @media (min-width: 768px) {
+    margin-top: 0px;
+  }
 `;
-export const FlexWrap = styled.div`
+export const FlexWrap = styled.div<StyledProps>`
+  padding: ${(props) => props.padding};
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: ${(props) => props.justify || 'center'};
+  align-items: ${(props) => props.items || 'center'};
+  flex-direction: ${(props) => props.direction};
+  margin-bottom: ${(props) => props.mb};
+  color: ${(props) => props.color};
 `;
 
 export const H1 = styled.h1<StyledProps>`
@@ -41,6 +55,7 @@ export const H1 = styled.h1<StyledProps>`
   margin: ${(props) => props.mx};
   margin-top: ${(props) => props.mt};
   color: ${(props) => props.color};
+  text-align: center;
   /* visibility: ${(props) => (props.show === true ? 'visible' : 'hidden')}; */
 
   ${(props) =>
