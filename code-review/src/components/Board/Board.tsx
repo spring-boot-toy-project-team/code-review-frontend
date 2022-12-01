@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { FlexWrap, H1 } from '../../../../styles/uielements';
-import Search from '../Search/Search';
-import Unknown from '../../../../public/assets/unknown.png';
+import { FlexWrap, H1 } from '../../../styles/uielements';
+
+import Unknown from '../../../public/assets/unknown.png';
 const Board = () => {
   return (
     <BoardContainer>

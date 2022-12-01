@@ -4,7 +4,7 @@ import Typed from 'react-typed';
 import Image from 'next/image';
 import { FaArrowDown } from 'react-icons/fa';
 import { ContentWrap, H1 } from '../../../styles/uielements';
-import { opacity, movingArrow, slideUp } from '../../../styles/keyfreams';
+import { opacity, movingArrow } from '../../../styles/keyfreams';
 import { MutableRefObject } from 'react';
 
 interface Props {
@@ -49,7 +49,7 @@ export default function Promotion({ desRef }: Props) {
           </TypedWrap>
         </H1>
         <ImgWrap>
-          <Image alt="Mountains" src={Meeting} fill />
+          <Image alt="Mountains" priority src={Meeting} sizes={'100%'} fill />
         </ImgWrap>
         <ArrowWrap>
           <FaArrowDown

@@ -54,7 +54,7 @@ export default function Cards() {
         <GridWrap id="slider">
           <Card>
             <ImgWrap>
-              <Image fill alt="share" src={Share} />
+              <Image sizes={'100%'} priority fill alt="share" src={Share} />
             </ImgWrap>
             <H1 fontSize="15px" mdFontSize="18px" mb="10px">
               코드리뷰는 효율적인
@@ -65,7 +65,7 @@ export default function Cards() {
           </Card>
           <Card>
             <ImgWrap>
-              <Image fill alt="Code" src={Code} />
+              <Image fill sizes={'100%'} alt="Code" src={Code} />
             </ImgWrap>
             <H1 fontSize="15px" mdFontSize="18px" mb="10px">
               다양한 코드를 보고 배우며
@@ -76,7 +76,7 @@ export default function Cards() {
           </Card>
           <Card>
             <ImgWrap>
-              <Image fill alt="question" src={Question} />
+              <Image fill sizes={'100%'} alt="question" src={Question} />
             </ImgWrap>
 
             <H1 fontSize="15px" mdFontSize="18px" mb="10px">
@@ -88,7 +88,7 @@ export default function Cards() {
           </Card>
           <Card>
             <ImgWrap>
-              <Image fill alt="chat" src={Chat} />
+              <Image fill sizes={'100%'} alt="chat" src={Chat} />
             </ImgWrap>
 
             <H1 fontSize="15px" mdFontSize="18px" mb="10px">
@@ -100,7 +100,7 @@ export default function Cards() {
           </Card>
           <Card>
             <ImgWrap>
-              <Image fill alt="productive" src={Productive} />
+              <Image fill sizes={'100%'} alt="productive" src={Productive} />
             </ImgWrap>
 
             <H1 fontSize="15px" mdFontSize="18px" mb="10px">

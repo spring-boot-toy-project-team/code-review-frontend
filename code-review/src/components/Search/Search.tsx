@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FlexWrap } from '../../../../styles/uielements';
+import { FlexWrap } from '../../../styles/uielements';
 import { BiSearch } from 'react-icons/bi';
 import Dropdown from './Dropdown/Dropdown';
 
@@ -12,11 +12,10 @@ const Search = () => {
           <IconWrap>
             <BiSearch size={20} />
           </IconWrap>
-
           <Input placeholder="검색" />
         </FlexWrap>
+        <Button>글쓰기</Button>
       </FlexWrap>
-      <Button>글쓰기</Button>
     </SearchContainer>
   );
 };
@@ -24,15 +23,15 @@ const Search = () => {
 export default Search;
 
 const Button = styled.button`
-  font-size: 13px;
   width: 80px;
   height: 45px;
   font-size: 15px;
   border-style: none;
   background-color: #c9d7e8;
-  color: #2a51dd;
-  font-weight: bold;
-  border-radius: 6px;
+  color: black;
+  font-weight: 600;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 `;
 
 const SearchContainer = styled.div`
@@ -43,12 +42,12 @@ const SearchContainer = styled.div`
   align-items: center;
   border-radius: 6px;
   width: 70%;
+  height: 150px;
 `;
 
 const Input = styled.input`
   height: 45px;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
+
   padding-left: 30px;
   outline: none;
   border-style: none;

@@ -1,10 +1,10 @@
 import React, { forwardRef } from 'react';
-import { Container, ContentWrap, H1 } from '../../../styles/uielements';
+import { Container, H1 } from '../../../styles/uielements';
 import { useRef } from 'react';
 import useObserver from '../../hooks/useObserver';
 import styled, { css } from 'styled-components';
 import { StyledProps } from '../../../types/types';
-import { slideFromLeft, slideUp } from '../../../styles/keyfreams';
+import { slideUp } from '../../../styles/keyfreams';
 
 const Description = forwardRef<HTMLDivElement>((props, ref) => {
   const contentRef = useRef<HTMLHeadingElement>(null);

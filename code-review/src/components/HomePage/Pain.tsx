@@ -11,7 +11,7 @@ interface Props {
 export default function Pain({ scrollPosition, scrollHeight }: Props) {
   return (
     <Container width="100%" bg={'white'}>
-      <BackgroundDiv width={`${scrollPosition + 250}px`}>
+      <BackgroundDiv style={{ width: `${scrollPosition + 50}px` }}>
         <ContentWrap>
           <H1 mdFontSize="60px" color="white" fontSize="22px" mb="70px">
             프로그래밍은 더이상 혼자만의 싸움이 아닙니다.
@@ -31,7 +31,7 @@ const BackgroundDiv = styled.div<StyledProps>`
     url('assets/black.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  width: ${({ width }) => width};
+  width: ${({ width, show }) => show === true && width};
   height: 100%;
   animation: ${opacity2} 2s 0 ease-in;
   display: flex;

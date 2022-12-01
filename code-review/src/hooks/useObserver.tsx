@@ -1,5 +1,4 @@
-import React, { ForwardedRef, forwardRef } from 'react';
-import { useState, useEffect, MutableRefObject } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const useObserver = (ref: React.RefObject<HTMLHeadingElement>) => {
   const [show, setShow] = useState(false);

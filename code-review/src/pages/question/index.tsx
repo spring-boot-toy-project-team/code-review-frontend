@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { H1 } from '../../../styles/uielements';
-import { flexCenter } from '../../../styles/css-style';
-import Board from './Board/Board';
-import Search from './Search/Search';
+import Board from '../../components/Board/Board';
+import Search from '../../components/Search/Search';
 
 const Question = () => {
   return (
