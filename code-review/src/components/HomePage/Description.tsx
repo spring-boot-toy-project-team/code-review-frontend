@@ -8,7 +8,7 @@ import { slideUp } from '../../../styles/keyfreams';
 
 const Description = forwardRef<HTMLDivElement>((props, ref) => {
   const contentRef = useRef<HTMLHeadingElement>(null);
-  const { show, setShow } = useObserver(contentRef);
+  const { show } = useObserver(contentRef);
   return (
     <Container height="80vh" className="description" ref={ref} id="description">
       <DesContentWrap show={show}>
@@ -56,6 +56,7 @@ const Description = forwardRef<HTMLDivElement>((props, ref) => {
     </Container>
   );
 });
+Description.displayName = 'Description';
 
 export default Description;
 

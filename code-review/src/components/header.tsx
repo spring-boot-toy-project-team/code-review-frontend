@@ -39,7 +39,9 @@ const Header = () => {
         </OutlineMenu>
         <SlideMenu left={nav ? '0' : '-100%'}>
           <Logo pt={'2rem'} pl={'1rem'} mb={'4rem'}>
-            <h1>Code Review</h1>
+            <Link onClick={handleNav} href="/">
+              <h1>Code Review</h1>
+            </Link>
           </Logo>
           <MiniLinkUl>
             {links.map((link) => (

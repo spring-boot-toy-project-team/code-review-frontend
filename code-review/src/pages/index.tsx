@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import styled from 'styled-components';
 import Promotion from '../components/HomePage/Promotion';
 import Description from '../components/HomePage/Description';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Pain from '../components/HomePage/Pain';
 import { useScrollPosition } from '../hooks/useScrollPosition';
 import Cards from '../components/HomePage/Cards';
@@ -11,6 +11,15 @@ import Head from 'next/head';
 const Home: NextPage = () => {
   const desRef = useRef<HTMLDivElement | null>(null);
   const { scrollPosition, scrollHeight } = useScrollPosition();
+
+  useEffect(() => {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        scrollTo(0, 0);
+      }, 100);
+    });
+    return window.removeEventListener('load', () => {});
+  }, []);
 
   return (
     <>
