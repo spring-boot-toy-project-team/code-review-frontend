@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { useState } from 'react';
-import { StyledProps } from '../../types/types';
-import Coding from '../../public/assets/code.png';
+import { StyledProps } from '../../../types/types';
+import Coding from '../../../public/assets/coding.png';
 import Image from 'next/image';
+import SlideMenu from './SlideMenu/SlideMenu';
 
 const links = [
   { name: '질문', path: '/question' },
@@ -37,27 +38,7 @@ const Header = () => {
         <OutlineMenu onClick={handleNav}>
           {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
         </OutlineMenu>
-        <SlideMenu left={nav ? '0' : '-100%'}>
-          <Logo pt={'2rem'} pl={'1rem'} mb={'4rem'}>
-            <Link onClick={handleNav} href="/">
-              <h1>Code Review</h1>
-            </Link>
-          </Logo>
-          <MiniLinkUl>
-            {links.map((link) => (
-              <LinkBox
-                key={link.name}
-                fontWeight={'400'}
-                padding={'20px'}
-                mb={'20px'}
-              >
-                <Link onClick={handleNav} href={link.path}>
-                  {link.name}
-                </Link>
-              </LinkBox>
-            ))}
-          </MiniLinkUl>
-        </SlideMenu>
+        <SlideMenu nav={nav} handleNav={handleNav} links={links} />
       </HeaderWrap>
     </HeaderContainer>
   );
@@ -65,20 +46,7 @@ const Header = () => {
 
 export default Header;
 
-const SlideMenu = styled.div<StyledProps>`
-  z-index: 2;
-  position: fixed;
-  left: ${(props) => props.left};
-  top: 0;
-  width: 75%;
-  height: 100%;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  transition: ease-in-out;
-  transition-duration: 0.3s;
-  background-color: white;
-`;
-
-const OutlineMenu = styled.div`
+export const OutlineMenu = styled.div`
   display: block;
   cursor: pointer;
 
@@ -87,7 +55,7 @@ const OutlineMenu = styled.div`
   }
 `;
 
-const LinkUl = styled.div<StyledProps>`
+export const LinkUl = styled.div<StyledProps>`
   display: ${(props) => props.display};
   flex-direction: ${(props) => props.direction || ''};
   padding: ${(props) => props.padding || ''};
@@ -96,7 +64,7 @@ const LinkUl = styled.div<StyledProps>`
   }
 `;
 
-const Logo = styled.div<StyledProps>`
+export const Logo = styled.div<StyledProps>`
   display: flex;
   align-items: center;
   padding-top: ${(props) => props.pt};
@@ -112,7 +80,7 @@ const Logo = styled.div<StyledProps>`
   }
 `;
 
-const HeaderContainer = styled.div`
+export const HeaderContainer = styled.div`
   z-index: 2;
   width: 100vw;
   height: 100px;
@@ -122,7 +90,7 @@ const HeaderContainer = styled.div`
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 `;
 
-const HeaderWrap = styled.div`
+export const HeaderWrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -137,7 +105,7 @@ const HeaderWrap = styled.div`
     padding: 0px 1rem 0 1rem;
   }
 `;
-const LinkBox = styled.span<StyledProps>`
+export const LinkBox = styled.span<StyledProps>`
   z-index: 2;
   width: 90%;
   height: 100%;
@@ -150,14 +118,14 @@ const LinkBox = styled.span<StyledProps>`
   font-weight: ${(props) => props.fontWeight};
 `;
 
-const MiniLinkUl = styled.div`
+export const MiniLinkUl = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
-const HeaderShortBtn = styled.div`
+export const HeaderShortBtn = styled.div`
   font-size: 25px;
   display: none;
 `;

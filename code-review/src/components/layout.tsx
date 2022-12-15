@@ -1,4 +1,4 @@
-import Header from './header';
+import Header from "./Header/header";
 import styled from 'styled-components';
 import { GlobalStyle } from '../../styles/global-style';
 
